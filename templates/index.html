@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Jackson County Points of Interest</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZVTI4BYbBPU0WsAQiatxs-HsN_dLsS04"></script>
+    <style>
+      body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+      }
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+      }
+      #map {
+        height: calc(100% - 40px);
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Points of Interest – Jackson County, FL</h3>
+    <div id="map"></div>
+
+    <script>
+      function initMap() {
+        const center = { lat: 30.7742, lng: -85.2419 };
+
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 11,
+          center: center,
+          mapTypeId: "roadmap"
+        });
+
+         map.data.loadGeoJson('/static/jackson_county_pois.geojson');
+
+        const infoWindow = new google.maps.InfoWindow();
+
+        map.data.addListener('click', function(event) {
+          const name = event.feature.getProperty('name');
+          const description = event.feature.getProperty('description');
+          const position = event.latLng;
+
+          infoWindow.setContent(`<strong>${name}</strong><br>${description}`);
+          infoWindow.setPosition(position);
+          infoWindow.open(map);
+        });
+      }
+
+      window.onload = initMap;
+    </script>
+  </body>
+</html>
