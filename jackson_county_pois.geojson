@@ -1,0 +1,201 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Florida Caverns State Park",
+        "description": "The only state park in Florida offering public cave tours, featuring stunning limestone formations and hiking trails."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2416,
+          30.7945
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Three Rivers State Park",
+        "description": "Located at the confluence of the Chattahoochee, Flint, and Apalachicola Rivers, offering camping, fishing, and boating opportunities."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.9817,
+          30.7571
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Blue Springs Recreational Area",
+        "description": "A popular swimming and diving spot known for its clear, spring-fed waters and scenic surroundings."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.1892,
+          30.7997
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Jackson County Courthouse",
+        "description": "Historic courthouse located in Marianna, serving as the center of county government."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2419,
+          30.7742
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Chipola College",
+        "description": "A public college in Marianna offering a range of academic programs and cultural events."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2411,
+          30.7792
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Marianna Civil War Battlefield",
+        "description": "Site of the Battle of Marianna during the Civil War, featuring historical markers and interpretive signage."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2416,
+          30.7745
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Lake Seminole",
+        "description": "A large reservoir at the confluence of the Chattahoochee and Flint Rivers, popular for fishing and boating."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.8791,
+          30.748
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Compass Lake",
+        "description": "A natural freshwater lake known for its recreational opportunities, including swimming and kayaking."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.3683,
+          30.5703
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Ocheesee Pond",
+        "description": "A cypress-lined pond offering excellent fishing and bird-watching opportunities."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.0025,
+          30.63
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Riverside Cemetery",
+        "description": "Historic cemetery in Marianna, final resting place of notable local figures including Civil War soldiers."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2396,
+          30.7791
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Spring Creek Park",
+        "description": "Shaded city park in Marianna offering walking trails, a splash pad, and a boardwalk over Spring Creek."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.239,
+          30.7772
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "The Russ House",
+        "description": "A historic Victorian mansion now serving as a visitor center and the Jackson County Chamber of Commerce."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2432,
+          30.7757
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Bellamy Bridge Heritage Trail",
+        "description": "A short hiking trail leading to the ruins of Florida's oldest known steel-frame bridge, tied to local ghost lore."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2224,
+          30.7892
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Hinson Conservation and Recreation Area",
+        "description": "A nature preserve in Marianna offering trails, picnic areas, and access to the Chipola River, ideal for hiking and kayaking."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -85.2428,
+          30.7828
+        ]
+      }
+    }
+  ]
+}
