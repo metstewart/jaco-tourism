@@ -4,50 +4,155 @@
     <title>Jackson County Points of Interest</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZVTI4BYbBPU0WsAQiatxs-HsN_dLsS04"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ api_key }}"></script>
+    <link rel="stylesheet" href="/static/style.css">
     <style>
-      body, html {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        font-family: Arial, sans-serif;
-      }
-      h3 {
-        text-align: center;
-        margin: 10px 0;
-      }
-      #map {
-        height: calc(100% - 40px);
-        width: 100%;
-      }
+      #map { height: 100vh; width: 100%; }
     </style>
   </head>
   <body>
-    <h3>Points of Interest – Jackson County, FL</h3>
-    <div id="map"></div>
+    <header class="title-header">
+    <h1>Jackson County Points of Interest</h1>
+  </header>
+    <button id="toggleBtn">☰ Locations</button>
+    <div id="menu">
+      <div class="menu-header">
+        <button id="closeMenuBtn" title="Close Menu">←</button>
+        <h2>Points of Interest</h2>
+      </div>
+      <ul id="locationList"></ul>
+    </div>
+  <div id="map"></div>
+
+  <div id="locationModal" class="location-modal" style="display: none;">
+    <div class="modal-content">
+      <span id="modalClose" class="modal-close">×</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalDescription"></p>
+    </div>
+  </div>
+
 
     <script>
-      function initMap() {
-        const center = { lat: 30.7742, lng: -85.2419 };
 
+      function showLocationModal(name, description) {
+        const modal = document.getElementById("locationModal");
+        document.getElementById("modalTitle").textContent = name;
+        document.getElementById("modalDescription").textContent = description;
+        modal.style.display = "block";
+      }
+
+      document.getElementById("modalClose").addEventListener("click", function () {
+        document.getElementById("locationModal").style.display = "none";
+      });
+
+      let selectedFeature = null;
+
+      function initMap() {
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 11,
-          center: center,
-          mapTypeId: "roadmap"
+          center: {lat: 30.7742, lng: -85.2419},
+          mapTypeId: "satellite"
         });
 
-         map.data.loadGeoJson('/static/jackson_county_pois.geojson');
+        const iconBase = "http://maps.google.com/mapfiles/ms/icons/";
+        const icons = {
+          recreational: iconBase + "green-dot.png",
+          historic: iconBase + "blue-dot.png",
+          other: iconBase + "blue-dot.png"
+        };
+
+        // Load GeoJSON and assign custom icons based on category
+        map.data.loadGeoJson("/static/jackson_county_pois.geojson");
+
+        map.data.setStyle(function (feature) {
+          const category = feature.getProperty("category") || "other";
+          return {
+            icon: {
+              url: icons[category] || icons.other
+            }
+          };
+        });
+
+        // Create the menu list after the GeoJSON is loaded
+        map.data.addListener("addfeature", function (featureEvent) {
+          const feature = featureEvent.feature;
+          const name = feature.getProperty("name");
+
+          const geometry = feature.getGeometry();
+          let position;
+          if (geometry.getType() === "Point") {
+            position = geometry.get();
+          } else {
+            return;
+          }
+
+          const listItem = document.createElement("li");
+          listItem.textContent = name;
+          listItem.style.cursor = "pointer";
+          listItem.onclick = function () {
+            map.panTo(position);
+            map.setZoom(17);
+
+            if (selectedFeature) {
+              map.data.revertStyle(selectedFeature);
+            }
+
+            selectedFeature = feature;
+            const category = feature.getProperty("category") || "other";
+
+            map.data.overrideStyle(selectedFeature, {
+              icon: {
+                url: icons[category],
+                scaledSize: new google.maps.Size(48, 48),
+                anchor: new google.maps.Point(24, 48)
+              }
+            });
+
+            showLocationModal(name, feature.getProperty("description"));
+        };
+
+
+
+          document.getElementById("locationList").appendChild(listItem);
+        });
+
+        document.getElementById("toggleBtn").addEventListener("click", function () {
+          document.getElementById("menu").classList.toggle("open");
+        });
+
+        document.getElementById("closeMenuBtn").addEventListener("click", function () {
+          document.getElementById("menu").classList.remove("open");
+        });
+
 
         const infoWindow = new google.maps.InfoWindow();
+        let selectedFeature = null;
 
-        map.data.addListener('click', function(event) {
-          const name = event.feature.getProperty('name');
-          const description = event.feature.getProperty('description');
-          const position = event.latLng;
+       map.data.addListener("click", function(event) {
+          const name = event.feature.getProperty("name");
+          const description = event.feature.getProperty("description");
+          const category = event.feature.getProperty("category") || "other";
 
-          infoWindow.setContent(`<strong>${name}</strong><br>${description}`);
-          infoWindow.setPosition(position);
-          infoWindow.open(map);
+          if (selectedFeature) {
+            map.data.revertStyle(selectedFeature);
+          }
+
+          selectedFeature = event.feature;
+          map.data.overrideStyle(selectedFeature, {
+            icon: {
+              url: icons[category],
+              scaledSize: new google.maps.Size(48, 48),
+              anchor: new google.maps.Point(24, 48)
+            }
+          });
+
+          showLocationModal(name, description);
+        });
+
+
+        document.getElementById("modalClose").addEventListener("click", function () {
+          document.getElementById("locationModal").style.display = "none";
         });
       }
 

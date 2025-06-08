@@ -1,0 +1,128 @@
+    body {
+      background: #525252;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: white;
+      margin: 0;
+    }
+
+    html, body, #map {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+     #map {
+      height: calc(100vh - 60px); /* header is ~60px tall */
+      width: 100%;
+      margin-top: 60px;
+    }
+
+      #menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        background: #1f2937;
+        color: white;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 9999;
+        padding: 1rem;
+      }
+
+      #menu.open {
+        transform: translateX(0);
+      }
+
+      #menu h2 {
+        margin-top: 0;
+        color: #93c5fd;
+      }
+
+      #menu ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      #menu li {
+        margin: 10px 0;
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      #menu li:hover {
+        color: #60a5fa;
+      }
+
+      #toggleBtn {
+           position: fixed;
+          top: 20px;
+          left: 20px;
+          z-index: 1002;
+          background: #3b82f6;
+          color: white;
+          border: none;
+          padding: 10px;
+          border-radius: 6px;
+          cursor: pointer;
+          font-size: 16px;
+        }
+
+    .title-header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #1f2937;
+      padding: 10px 0;
+      z-index: 1001;
+      text-align: center;
+      color: #ffffff;
+      font-size: 14px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    #closeMenuBtn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 0;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+
+    #closeMenuBtn:hover {
+      color: #60a5fa;
+    }
+
+    .location-modal {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #1f2937;
+      color: white;
+      padding: 1rem;
+      border-top: 2px solid #93c5fd;
+      z-index: 10000;
+      display: none;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+    }

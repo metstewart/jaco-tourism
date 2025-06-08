@@ -5,13 +5,14 @@
       "type": "Feature",
       "properties": {
         "name": "Florida Caverns State Park",
-        "description": "The only state park in Florida offering public cave tours, featuring stunning limestone formations and hiking trails."
+        "description": "The only state park in Florida offering public cave tours, featuring stunning limestone formations and hiking trails.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -85.2416,
-          30.7945
+          -85.2278778,
+          30.8109644
         ]
       }
     },
@@ -19,7 +20,8 @@
       "type": "Feature",
       "properties": {
         "name": "Three Rivers State Park",
-        "description": "Located at the confluence of the Chattahoochee, Flint, and Apalachicola Rivers, offering camping, fishing, and boating opportunities."
+        "description": "Located at the confluence of the Chattahoochee, Flint, and Apalachicola Rivers, offering camping, fishing, and boating opportunities.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
@@ -33,7 +35,8 @@
       "type": "Feature",
       "properties": {
         "name": "Blue Springs Recreational Area",
-        "description": "A popular swimming and diving spot known for its clear, spring-fed waters and scenic surroundings."
+        "description": "A popular swimming and diving spot known for its clear, spring-fed waters and scenic surroundings.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
@@ -47,13 +50,14 @@
       "type": "Feature",
       "properties": {
         "name": "Jackson County Courthouse",
-        "description": "Historic courthouse located in Marianna, serving as the center of county government."
+        "description": "Historic courthouse located in Marianna, serving as the center of county government.",
+        "category": "historic"
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -85.2419,
-          30.7742
+          -85.2262182,
+          30.7735994
         ]
       }
     },
@@ -61,7 +65,8 @@
       "type": "Feature",
       "properties": {
         "name": "Chipola College",
-        "description": "A public college in Marianna offering a range of academic programs and cultural events."
+        "description": "A public college in Marianna offering a range of academic programs and cultural events.",
+        "category": "other"
       },
       "geometry": {
         "type": "Point",
@@ -75,7 +80,8 @@
       "type": "Feature",
       "properties": {
         "name": "Marianna Civil War Battlefield",
-        "description": "Site of the Battle of Marianna during the Civil War, featuring historical markers and interpretive signage."
+        "description": "Site of the Battle of Marianna during the Civil War, featuring historical markers and interpretive signage.",
+        "category": "historic"
       },
       "geometry": {
         "type": "Point",
@@ -89,7 +95,8 @@
       "type": "Feature",
       "properties": {
         "name": "Lake Seminole",
-        "description": "A large reservoir at the confluence of the Chattahoochee and Flint Rivers, popular for fishing and boating."
+        "description": "A large reservoir at the confluence of the Chattahoochee and Flint Rivers, popular for fishing and boating.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
@@ -103,7 +110,8 @@
       "type": "Feature",
       "properties": {
         "name": "Compass Lake",
-        "description": "A natural freshwater lake known for its recreational opportunities, including swimming and kayaking."
+        "description": "A natural freshwater lake known for its recreational opportunities, including swimming and kayaking.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
@@ -117,7 +125,8 @@
       "type": "Feature",
       "properties": {
         "name": "Ocheesee Pond",
-        "description": "A cypress-lined pond offering excellent fishing and bird-watching opportunities."
+        "description": "A cypress-lined pond offering excellent fishing and bird-watching opportunities.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
@@ -131,7 +140,8 @@
       "type": "Feature",
       "properties": {
         "name": "Riverside Cemetery",
-        "description": "Historic cemetery in Marianna, final resting place of notable local figures including Civil War soldiers."
+        "description": "Historic cemetery in Marianna, final resting place of notable local figures including Civil War soldiers.",
+        "category": "historic"
       },
       "geometry": {
         "type": "Point",
@@ -145,7 +155,8 @@
       "type": "Feature",
       "properties": {
         "name": "Spring Creek Park",
-        "description": "Shaded city park in Marianna offering walking trails, a splash pad, and a boardwalk over Spring Creek."
+        "description": "Shaded city park in Marianna offering walking trails, a splash pad, and a boardwalk over Spring Creek.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
@@ -159,7 +170,8 @@
       "type": "Feature",
       "properties": {
         "name": "The Russ House",
-        "description": "A historic Victorian mansion now serving as a visitor center and the Jackson County Chamber of Commerce."
+        "description": "A historic Victorian mansion now serving as a visitor center and the Jackson County Chamber of Commerce.",
+        "category": "historic"
       },
       "geometry": {
         "type": "Point",
@@ -173,7 +185,8 @@
       "type": "Feature",
       "properties": {
         "name": "Bellamy Bridge Heritage Trail",
-        "description": "A short hiking trail leading to the ruins of Florida's oldest known steel-frame bridge, tied to local ghost lore."
+        "description": "A short hiking trail leading to the ruins of Florida's oldest known steel-frame bridge, tied to local ghost lore.",
+        "category": "historic"
       },
       "geometry": {
         "type": "Point",
@@ -187,7 +200,8 @@
       "type": "Feature",
       "properties": {
         "name": "Hinson Conservation and Recreation Area",
-        "description": "A nature preserve in Marianna offering trails, picnic areas, and access to the Chipola River, ideal for hiking and kayaking."
+        "description": "A nature preserve in Marianna offering trails, picnic areas, and access to the Chipola River, ideal for hiking and kayaking.",
+        "category": "recreational"
       },
       "geometry": {
         "type": "Point",
